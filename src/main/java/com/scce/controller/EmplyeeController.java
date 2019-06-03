@@ -34,5 +34,9 @@ public class EmplyeeController {
     }
 
     //根据id删除员工
+    public JsonResult delEmplyee(){
+
+        return new JsonResult();
+    }
 
 }
