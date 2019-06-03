@@ -21,8 +21,10 @@
     <!-- 将SwaggerConfig配置类注入 -->
     <bean class="com.scce.swagger.SwaggerConfig"/>
     <!-- 配置swagger资源不被拦截 -->
-    <mvc:resources location="/swagger/" mapping="/swagger/**"/>
 
+
+    <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" />
+    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/" />
 
 
     <!--前端控制器-->

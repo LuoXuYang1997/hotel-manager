@@ -20,6 +20,22 @@ public class Emplyee {
     private String address; //地址
     private Integer type;    //用户类型
 
+    public Emplyee() {
+    }
+
+    public Emplyee(Integer id, String account, String realName, String password, String sex, Date birthDate, String idCard, String phone, String address, Integer type) {
+        this.id = id;
+        this.account = account;
+        this.realName = realName;
+        this.password = password;
+        this.sex = sex;
+        this.birthDate = birthDate;
+        this.idCard = idCard;
+        this.phone = phone;
+        this.address = address;
+        this.type = type;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -16,4 +16,5 @@ public interface EmplyeeService  {
    //根据id删除员工
     public void delEmplyee(int id) throws Exception;
 
+    public  Emplyee login(Emplyee emplyee);
 }

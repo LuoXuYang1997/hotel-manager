@@ -2,6 +2,7 @@ package com.scce.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -16,6 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author: Lxy
  * @create: 2019-06-02 21:21
  **/
+@Configuration
 @EnableSwagger2
 @EnableWebMvc
 @ComponentScan(basePackages = "com.scce.controller")
@@ -31,8 +33,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("xxx项目接口文档")
-                .description("xxx项目接口测试")
+                .title("hotel-manager项目接口文档")
+                .description("hotel-manager项目接口测试")
                 .version("1.0.0")
                 .termsOfServiceUrl("")
                 .license("")

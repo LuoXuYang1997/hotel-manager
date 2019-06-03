@@ -41,5 +41,11 @@ public class EmplyeeServiceImpl implements EmplyeeService {
         emplyeeDao.delEmplyee(id);
     }
 
+    @Override
+    public Emplyee login(Emplyee emplyee) {
+        emplyeeDao.login(emplyee);
+        return null;
+    }
+
 
 }

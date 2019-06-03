@@ -24,4 +24,7 @@ public interface EmplyeeDao {
     //根据id删除
     @Delete("delete from emplyee where id=#{id}")
    public  void delEmplyee(int id) throws  Exception;
+
+    @Select("select * from emplyee  where account=#{account} and password=#{password}")
+    public   void login(Emplyee emplyee);
 }

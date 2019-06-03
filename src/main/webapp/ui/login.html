@@ -11,6 +11,43 @@
             $('.loginbox').css({'position':'absolute','left':($(window).width()-692)/2});
             $(window).resize(function(){
                 $('.loginbox').css({'position':'absolute','left':($(window).width()-692)/2});
+            });
+
+            $('#button').on('click', function () {
+
+                var account = $("#account").val();
+                var password = $("#password").val();
+                console.log(account);
+                console.log(password);
+                if (account == null||account=="") {
+                    $("#usertxt").show();
+                }else if (password == null||password=="") {
+                    $('#pwdtxt').show();
+                }else  {
+                   $.ajax({
+                      url:"../emplyee/getEmplyee" ,
+                       type:"POST",
+                       data:{
+                          "account":account,
+                           "password":password
+                       },
+                       success:function (data,status) {
+                           if (status == "success") {
+                               console.log('请求成功');
+                               console.log(data);
+                               if (data.state==0) {
+                                   window.location="index.html";
+                               }else {
+                                   alert("账号密码错误")
+                               }
+
+                           }
+                       },
+                       error: function () {
+                           console.log('请求失败');
+                       }
+                   });
+                }
             })
         });
     </script>
@@ -32,9 +69,21 @@
 
         <div class="loginbox">
             <ul>
-                <li><input  type="text" class="loginuser"  name="account" /></li>
-                <li><input  type="password" class="loginpwd"  name="password"/></li>
-                <li><input  type="submit" class="loginbtn" value="登录"  name="button"  /><label><input name="" type="checkbox" value="" checked="checked" />记住密码</label><label><a href="#">忘记密码？</a></label></li>
+                <li>
+                    <input  type="text" class="loginuser"  name="account" id="account"/>
+                </li>
+                <li>
+                    <input  type="password" class="loginpwd"  name="password" id="password"/>
+                </li>
+                <li>
+                    <input  type="button" class="loginbtn" value="登录"  name="button" id="button" />
+                    <label>
+                        <input name="" type="checkbox" value="" checked="checked" />记住密码
+                    </label>
+                    <label>
+                        <a href="#">忘记密码？</a>
+                    </label>
+                </li>
             </ul>
         </div>
 
